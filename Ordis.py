@@ -1,4 +1,5 @@
-
+#user input
+user = input('')
 #Distance
 def minimumEditDistance(s1,s2):
     if len(s1) > len(s2):
@@ -15,9 +16,11 @@ def minimumEditDistance(s1,s2):
                                              newDistances[-1])))
         distances = newDistances
     return distances[-1]
-#file read
-f= open("memory.txt", "r")
 
-if f.mode == "r":
-    contents =f.read()
-    print(contents)
+
+#file read
+def searchfile():
+    f=open("memory.txt", "r")
+    if f.mode == 'r':
+        contents =f 
+

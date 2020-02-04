@@ -1,5 +1,3 @@
-#user input
-user = input('')
 #Distance
 def minimumEditDistance(s1,s2):
     if len(s1) > len(s2):
@@ -22,5 +20,29 @@ def minimumEditDistance(s1,s2):
 def searchfile():
     f=open("memory.txt", "r")
     if f.mode == 'r':
-        contents =f 
+        contents =f
 
+def loadFile(fileName):
+    contents={}
+    f = open(fileName, "r")
+    if f.mode == 'r':
+        contents = f
+    return contents
+
+def findBestId(s1,lst):
+    rid=0
+    score=100000
+    for i in range(lst.length()):
+        tmpScore=minimumEditDistance(s1,lst[i])
+        if tmpScore<score:
+            score=tmpScore
+            rid=i
+    return rid
+
+#user input
+user = input('')
+lst=loadFile("memory.txt")
+tmpId=findBestId(user,lst)+1
+if tmpId>=lst.length():
+    tmpId=0
+print(lst[tmpId])

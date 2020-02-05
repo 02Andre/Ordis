@@ -15,13 +15,6 @@ def minimumEditDistance(s1,s2):
         distances = newDistances
     return distances[-1]
 
-
-#file read
-def searchfile():
-    f=open("memory.txt", "r")
-    if f.mode == 'r':
-        contents =f
-
 def loadFile(fileName):
     contents=list()
     with open(fileName) as f:

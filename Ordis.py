@@ -32,10 +32,15 @@ def findBestId(s1,lst):
             rid=i
     return rid
 
-#user input
+#user input while loop
+endprogram = "goodbye"
 user = input('')
-lst=loadFile("memory.txt")
-tmpId=findBestId(user,lst)+1
-if tmpId>=len(lst):
-    tmpId=0
-print(lst[tmpId])
+while user != endprogram:
+    lst = loadFile("memory.txt")
+    tmpId = findBestId(user, lst) + 1
+    if tmpId >= len(lst):
+        tmpId = 0
+    print(lst[tmpId])
+    user = input('')
+print("bye")
+

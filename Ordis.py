@@ -23,16 +23,16 @@ def searchfile():
         contents =f
 
 def loadFile(fileName):
-    contents={}
-    f = open(fileName, "r")
-    if f.mode == 'r':
-        contents = f
+    contents=list()
+    with open(fileName) as f:
+        for line in f:
+            contents.append(line)
     return contents
 
 def findBestId(s1,lst):
     rid=0
     score=100000
-    for i in range(lst.length()):
+    for i in range(len(lst)):
         tmpScore=minimumEditDistance(s1,lst[i])
         if tmpScore<score:
             score=tmpScore
@@ -43,6 +43,6 @@ def findBestId(s1,lst):
 user = input('')
 lst=loadFile("memory.txt")
 tmpId=findBestId(user,lst)+1
-if tmpId>=lst.length():
+if tmpId>=len(lst):
     tmpId=0
 print(lst[tmpId])

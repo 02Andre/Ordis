@@ -31,16 +31,32 @@ def findBestId(s1,lst):
             score=tmpScore
             rid=i
     return rid
-
-#user input while loop
-endprogram = "goodbye"
-user = input('')
-while user != endprogram:
-    lst = loadFile("memory.txt")
-    tmpId = findBestId(user, lst) + 1
-    if tmpId >= len(lst):
-        tmpId = 0
-    print(lst[tmpId])
+#gives user the option to use a different memory.txt file
+print('before you can start talking please type what memory you want the bot to have.')
+print('options: default or Ordis')
+memory_type = input('')
+if memory_type == ('default')
+    endprogram = "goodbye"
     user = input('')
-print("bye")
+    while user != endprogram:
+        lst = loadFile("memory.txt")
+        tmpId = findBestId(user, lst) + 1
+        if tmpId >= len(lst):
+            tmpId = 0
+        print(lst[tmpId])
+        user = input('')
+    print("bye")
+elif memory_type == ('Ordis')
+    endprogram = "goodbye"
+    user = input('')
+    while user != endprogram:
+        lst = loadFile("Ordis.txt")
+        tmpId = findBestId(user, lst) + 1
+        if tmpId >= len(lst):
+            tmpId = 0
+        print(lst[tmpId])
+        user = input('')
+    print("bye")
+
+
 

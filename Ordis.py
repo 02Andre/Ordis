@@ -34,29 +34,34 @@ def findBestId(s1,lst):
 #gives user the option to use a different memory.txt file
 print('before you can start talking please type what memory you want the bot to have.')
 print('options: default or Ordis')
-memory_type = input('')
-if memory_type == ('default')
+memory_type = input('type:')
+if memory_type == ('default'):
+    print('to end conversation simply type goodbye ')
     endprogram = "goodbye"
-    user = input('')
+    user = input('user:')
     while user != endprogram:
         lst = loadFile("memory.txt")
         tmpId = findBestId(user, lst) + 1
         if tmpId >= len(lst):
             tmpId = 0
         print(lst[tmpId])
-        user = input('')
+        user = input('user: ')
     print("bye")
-elif memory_type == ('Ordis')
+elif memory_type == ('Ordis'):
+    print('to en conversation simply type goodbye as shown')
     endprogram = "goodbye"
-    user = input('')
+    user = input('user:')
     while user != endprogram:
         lst = loadFile("Ordis.txt")
         tmpId = findBestId(user, lst) + 1
         if tmpId >= len(lst):
             tmpId = 0
         print(lst[tmpId])
-        user = input('')
+        user = input('user:')
     print("bye")
+else:
+    print('no such memory exsist please type another or be sure you are typing it correctly as it appears.')
+
 
 
 

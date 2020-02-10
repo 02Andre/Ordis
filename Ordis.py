@@ -48,7 +48,7 @@ if memory_type == ('default'):
         user = input('user: ')
     print("bye")
 elif memory_type == ('Ordis'):
-    print('to en conversation simply type goodbye as shown')
+    print('to end conversation simply type goodbye as shown')
     endprogram = "goodbye"
     user = input('user:')
     while user != endprogram:

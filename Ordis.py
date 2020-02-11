@@ -35,6 +35,9 @@ def findBestId(s1,lst):
 print('before you can start talking please type what memory you want the bot to have.')
 print('options: default or Ordis')
 memory_type = input('type:')
+while memory_type != 'default' and memory_type != 'Ordis':
+    print('no such memory exsits please choose from the options or check if its spelled right.')
+    memory_type = input('type: ')
 if memory_type == ('default'):
     print('to end conversation simply type goodbye ')
     endprogram = "goodbye"
@@ -59,8 +62,7 @@ elif memory_type == ('Ordis'):
         print(lst[tmpId])
         user = input('user:')
     print("bye")
-else:
-    print('no such memory exsist please type another or be sure you are typing it correctly as it appears.')
+
 
 
 

@@ -43,6 +43,7 @@ if memory_type == ('default'):
     endprogram = "goodbye"
     user = input('user:')
     while user != endprogram:
+        #this is where the distance is used to compare the users input to the chosen txt file, finds the best similarity and prints it as a response
         lst = loadFile("memory.txt")
         tmpId = findBestId(user, lst) + 1
         if tmpId >= len(lst):

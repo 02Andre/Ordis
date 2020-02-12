@@ -22,7 +22,7 @@ def loadFile(fileName):
             contents.append(line)
     return contents
 def record(user):
-    file=open('memory.txt', 'w')
+    file=open('memory.txt', 'a')
     file.write(user)
     file.close()
 
@@ -53,6 +53,7 @@ if memory_type == ('default'):
         if tmpId >= len(lst):
             tmpId = 0
         print(lst[tmpId])
+        record(user)
         user = input('user: ')
     print("bye")
 elif memory_type == ('Ordis'):

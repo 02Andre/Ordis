@@ -14,18 +14,25 @@ def minimumEditDistance(s1,s2):
                                              newDistances[-1])))
         distances = newDistances
     return distances[-1]
-
+#loads the chosen memory file
 def loadFile(fileName):
     contents=list()
     with open(fileName) as f:
         for line in f:
             contents.append(line)
     return contents
+#lets program write the user response in the memory file
 def record(user):
     file=open('memory.txt', 'a')
     file.write(user)
     file.close()
 
+def Orecord(user):
+    file=open('Ordis.txt', 'a')
+    file.write(user)
+    file.close()
+
+#finds the best sentence in a memory file to say.
 def findBestId(s1,lst):
     rid=0
     score=100000
@@ -39,9 +46,11 @@ def findBestId(s1,lst):
 print('before you can start talking please type what memory you want the bot to have.')
 print('options: default or Ordis')
 memory_type = input('type:')
+#the user will be in a while loop until they type the correct memory option
 while memory_type != 'default' and memory_type != 'Ordis':
     print('no such memory exsits please choose from the options or check if its spelled right.')
     memory_type = input('type: ')
+#if user want the default memory this will activate
 if memory_type == ('default'):
     print('to end conversation simply type goodbye ')
     endprogram = "goodbye"
@@ -56,6 +65,7 @@ if memory_type == ('default'):
         record(user)
         user = input('user: ')
     print("bye")
+#this is the other memory option
 elif memory_type == ('Ordis'):
     print('to end conversation simply type goodbye as shown')
     endprogram = "goodbye"
@@ -66,6 +76,7 @@ elif memory_type == ('Ordis'):
         if tmpId >= len(lst):
             tmpId = 0
         print(lst[tmpId])
+        Orecord(user)
         user = input('user:')
     print("bye")
 

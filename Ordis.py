@@ -21,6 +21,10 @@ def loadFile(fileName):
         for line in f:
             contents.append(line)
     return contents
+def record(user):
+    file=open('memory.txt', 'w')
+    file.write(user)
+    file.close()
 
 def findBestId(s1,lst):
     rid=0

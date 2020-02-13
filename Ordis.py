@@ -23,12 +23,7 @@ def loadFile(fileName):
     return contents
 #lets program write the user response in the memory file
 def record(user):
-    file=open('memory.txt', 'a')
-    file.write(user)
-    file.close()
-
-def Orecord(user):
-    file=open('Ordis.txt', 'a')
+    file=open('log.txt', 'a')
     file.write(user)
     file.close()
 
@@ -76,11 +71,6 @@ elif memory_type == ('Ordis'):
         if tmpId >= len(lst):
             tmpId = 0
         print(lst[tmpId])
-        Orecord(user)
+        record(user)
         user = input('user:')
     print("bye")
-
-
-
-
-

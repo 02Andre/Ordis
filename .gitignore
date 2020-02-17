@@ -1,0 +1,4 @@
+# Log file
+log.txt
+# Cache
+__pycache__/
